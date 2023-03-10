@@ -15,7 +15,7 @@ public class JugadorGuerra extends GuerraDados{
         System.out.println("Nombre 2");
         String nombre2 = teclado.nextLine();
 
-        dados.fichas = 10;
+        int juego = 10;
 
         do {
 
@@ -27,23 +27,22 @@ public class JugadorGuerra extends GuerraDados{
             dados.dado2 = 10;
             if (dado1 > dado2) {
                 System.out.println("Gana " + nombre1);
-                dados.dado1 += +1;
-                dados.dado2 -= -1;
+                dados.dado1 = dados.fichas1 + 1;
+                dados.dado2 = dados.fichas2 - 1;
+                juego += +1;
+                System.out.println("Marcador: " + nombre1 + " " + dados.dado1 + " - " + dados.dado2 + " " + nombre2);
 
-                dados.fichas += +1;
-                System.out.println("Marcador: " + nombre1 + " " + dado1 + " - " + nombre2 + " " + dado2);
             } else if (dado1 < dado2) {
                 System.out.println("Gana " + nombre2);
-                dados.dado2 += +1;
-                dados.dado1 -= -1;
-
-                dados.fichas += +1;
-                System.out.println("Marcador: " + nombre1 + " " + dado1 + " - " + nombre2 + " " + dado2);
+                dados.dado1 = dados.fichas1 - 1;
+                dados.dado2 = dados.fichas2 + 1;
+                juego += +1;
+                System.out.println("Marcador: " + nombre1 + " " + dados.dado1 + " - " + dados.dado2 + " " + nombre2);
             } else {
                 System.out.println("Empate");
             }
 
-        }while(dados.fichas != 20);
+        }while(juego != 20);
     }
 }
 
