@@ -3,48 +3,46 @@ package GuerraDados;
 import java.util.Scanner;
 
 public class JugadorGuerra extends GuerraDados{
-    static GuerraDados dados = new GuerraDados();
-    public static void main(String[] args) {
-        jugar();
+    public JugadorGuerra(String nombre) {
+        super(nombre);
     }
 
-    static public void jugar(){
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("Nombre 1");
-        String nombre1 = teclado.nextLine();
-        System.out.println("Nombre 2");
-        String nombre2 = teclado.nextLine();
+    public static void main(String[] args) {
+            JugadorGuerra jugador1 = new JugadorGuerra("Jugador 1");
+            JugadorGuerra jugador2 = new JugadorGuerra("Jugador 2");
 
-        int juego = 10;
+            while (jugador1.getFichas() > 0 && jugador2.getFichas() > 0) {
+                int resultado1 = jugador1.lanzarDado();
+                int resultado2 = jugador2.lanzarDado();
 
-        do {
+                System.out.println(jugador1.getNombre() + " sacó un " + resultado1);
+                System.out.println(jugador2.getNombre() + " sacó un " + resultado2);
 
-            int dado1 = (int) (Math.random() * 6 + 1);
-            System.out.println(nombre1 + " ha sacado un " + dado1);
-            dados.dado1 = 10;
-            int dado2 = (int) (Math.random() * 6 + 1);
-            System.out.println(nombre2 + " ha sacado un " + dado2);
-            dados.dado2 = 10;
-            if (dado1 > dado2) {
-                System.out.println("Gana " + nombre1);
-                dados.dado1 = dados.fichas1 + 1;
-                dados.dado2 = dados.fichas2 - 1;
-                juego += +1;
-                System.out.println("Marcador: " + nombre1 + " " + dados.dado1 + " - " + dados.dado2 + " " + nombre2);
+                if (resultado1 > resultado2) {
+                    System.out.println(jugador1.getNombre() + " gana la ronda");
+                    jugador2.quitarFicha();
+                } else if (resultado2 > resultado1) {
+                    System.out.println(jugador2.getNombre() + " gana la ronda");
+                    jugador1.quitarFicha();
+                } else {
+                    System.out.println("Empate");
+                }
 
-            } else if (dado1 < dado2) {
-                System.out.println("Gana " + nombre2);
-                dados.dado1 = dados.fichas1 - 1;
-                dados.dado2 = dados.fichas2 + 1;
-                juego += +1;
-                System.out.println("Marcador: " + nombre1 + " " + dados.dado1 + " - " + dados.dado2 + " " + nombre2);
-            } else {
-                System.out.println("Empate");
+                System.out.println(jugador1.getNombre() + " tiene " + jugador1.getFichas() + " fichas");
+                System.out.println(jugador2.getNombre() + " tiene " + jugador2.getFichas() + " fichas");
+                System.out.println();
             }
 
-        }while(juego != 20);
+            if (jugador1.getFichas() == 0) {
+                System.out.println(jugador2.getNombre() + " gana la guerra de dados");
+            } else {
+                System.out.println(jugador1.getNombre() + " gana la guerra de dados");
+            }
+        }
     }
-}
+
+
+
 
 
 
