@@ -32,7 +32,8 @@ public class Main {
                         Obra.crearObra();
                         break;
                     case 4:
-                        Pedido.pedido();
+                        Pedido.pedidoPersona();
+                        Pedido.elegirObra();
                         break;
                     case 5:
 
@@ -56,7 +57,7 @@ public class Main {
     static void mostrarClientes(){
         System.out.println("--Clientes--");
         for(int i = 0; i < clientes.size(); i++){
-            System.out.println("Cliente nº"+ i+1 +" "+ clientes.get(i));
+            System.out.println("Cliente nº"+ i +" "+ clientes.get(i));
         }
     }
 
