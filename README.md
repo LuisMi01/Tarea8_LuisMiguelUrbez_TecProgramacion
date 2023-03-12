@@ -1,6 +1,6 @@
 # Tarea8_LuisMiguelUrbez_TecProgramacion
 
-## Repositorio:
+## Repositorio: https://github.com/LuisMi01/Tarea8_LuisMiguelUrbez_TecProgramacion/tree/main
 
 ## Ejercicio: 
 1. La guerra de dados
