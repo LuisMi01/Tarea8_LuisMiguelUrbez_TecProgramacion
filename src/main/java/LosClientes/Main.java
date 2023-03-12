@@ -15,7 +15,7 @@ public class Main {
             System.out.println("2.- Añadir cliente");
             System.out.println("3.- Crear una obra");
             System.out.println("4.- Crear un pedido");
-            System.out.println("5.- Mostrr pedidos");
+            System.out.println("5.- Mostrar pedidos");
             System.out.println("6.- salir");
 
             opcion = teclado.nextInt();
@@ -33,10 +33,9 @@ public class Main {
                         break;
                     case 4:
                         Pedido.pedidoPersona();
-                        Pedido.elegirObra();
                         break;
                     case 5:
-
+                        Pedido.mostrarPedidos();
                         break;
                     case 6:
                         salir = true;

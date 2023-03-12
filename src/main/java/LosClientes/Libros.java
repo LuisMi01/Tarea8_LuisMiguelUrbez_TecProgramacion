@@ -6,7 +6,7 @@ public class Libros extends Obra{
     static String autorLibro;
     static int paginas;
     Obra.Tipo tipo = Obra.Tipo.Libro;
-    
+
     public static void libro(){
         Scanner teclado = new Scanner(System.in);
 
