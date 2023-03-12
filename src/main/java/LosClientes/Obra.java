@@ -5,7 +5,10 @@ import java.util.Scanner;
 
 
 public class Obra {
-    //Elementos comunes de libros y videos
+    static ArrayList<String> obras = new ArrayList<String>();
+    enum Tipo {
+        Libro, Video
+    }
     public static void crearObra() {
 
             Scanner teclado = new Scanner(System.in);

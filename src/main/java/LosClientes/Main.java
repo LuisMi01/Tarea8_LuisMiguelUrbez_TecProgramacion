@@ -54,14 +54,14 @@ public class Main {
     }
 
 
-    static void mostrarClientes(){
+    public static void mostrarClientes(){
         System.out.println("--Clientes--");
         for(int i = 0; i < clientes.size(); i++){
             System.out.println("Cliente nº"+ i +" "+ clientes.get(i));
         }
     }
 
-    static void anadirCliente(){
+    public static void anadirCliente(){
         System.out.println("¿Cual es el nombre del cliente?");
         String nombre = teclado.next();
         clientes.add(nombre);
