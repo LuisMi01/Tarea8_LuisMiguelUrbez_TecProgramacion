@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Video extends Obra{
+    static ArrayList<String> videos = new ArrayList<String>();
     public static void video() {
         Scanner teclado = new Scanner(System.in);
-        ArrayList<String> videos = new ArrayList<String>();
+
 
         System.out.println("¿Título?");
         String titulo = teclado.nextLine();

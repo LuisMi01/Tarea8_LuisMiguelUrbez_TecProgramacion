@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Libros extends Obra{
+    ArrayList<String> libros = new ArrayList<String>();
     public static void libro(){
         Scanner teclado = new Scanner(System.in);
         ArrayList<String> libros = new ArrayList<String>();

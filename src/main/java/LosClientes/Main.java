@@ -30,10 +30,9 @@ public class Main {
                         break;
                     case 3:
                         Obra.crearObra();
-
                         break;
                     case 4:
-
+                        Pedido.pedido();
                         break;
                     case 5:
 
@@ -56,13 +55,13 @@ public class Main {
 
     static void mostrarClientes(){
         System.out.println("--Clientes--");
-        for(int i = 1; i < clientes.size(); i++){
-            System.out.println("Cliente nº"+ i +" "+ clientes.get(i));
+        for(int i = 0; i < clientes.size(); i++){
+            System.out.println("Cliente nº"+ i+1 +" "+ clientes.get(i));
         }
     }
 
     static void anadirCliente(){
-        System.out.println("¿Cual es el nombre y apellidos del cliente?");
+        System.out.println("¿Cual es el nombre del cliente?");
         String nombre = teclado.next();
         clientes.add(nombre);
     }
